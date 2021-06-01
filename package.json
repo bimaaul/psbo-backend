@@ -1,0 +1,29 @@
+{
+  "name": "psbo-r7-squad",
+  "version": "1.0.0",
+  "description": "Pengembangan Sistem Berorientasi Objek",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bimaaul/psbo-backend.git"
+  },
+  "author": "W.C.K.D",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/bimaaul/psbo-backend/issues"
+  },
+  "homepage": "https://github.com/bimaaul/psbo-backend#readme",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "express": "^4.17.1",
+    "mongoose": "^5.12.12",
+    "validator": "^13.5.2"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.7"
+  }
+}
