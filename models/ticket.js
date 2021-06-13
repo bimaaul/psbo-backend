@@ -56,9 +56,8 @@ const TicketSchema = new Schema({
     },
     suratIzinAkademik:{
         type: String
-    }
-
-});
+    },
+}, {timestamps: true});
 
 const Ticket = mongoose.model('ticket', TicketSchema);
 
