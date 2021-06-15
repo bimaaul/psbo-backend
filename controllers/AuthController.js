@@ -36,6 +36,7 @@ const register = (req, res, next) =>{
 const login = (req, res, next) =>{
     var username = req.body.username
     var password = req.body.password
+    
 
     User.findOne({$or: [{email:username}, {phone:username}]})
     .then(user=>{
@@ -48,9 +49,22 @@ const login = (req, res, next) =>{
                 }
                 if(result){
                     let token = jwt.sign({nama: user.nama}, 'wcUm00m', {expiresIn: '1h'})
+                    // let userID = req.body.userID
+                    // User.findById(userID)
+                    // .then(response=>{
+                    //     res.json({
+                    //         response
+                    //     })
+                    // })
+                    // .catch(error => {
+                    //     res.json({
+                    //         message: 'Error Occured'
+                    //     })
+                    // })
                     res.json({
-                        message: 'logged in',
-                        token
+                        message: 'logged in succesfully',
+                        token,
+                        user
                     })
                 }else{
                     res.json({
