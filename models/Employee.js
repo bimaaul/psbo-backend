@@ -15,7 +15,31 @@ const employeeSchema = new Schema({
     prestasi: {
         type: String
     },
-    anggotaTim: {
+    anggotaTim1: {
+        type: String
+    },
+    nim1: {
+        type: String
+    },
+    phone1: {
+        type: String
+    },
+    anggotaTim2: {
+        type: String
+    },
+    nim2: {
+        type: String
+    },
+    phone2: {
+        type: String
+    },
+    anggotaTim3: {
+        type: String
+    },
+    nim3: {
+        type: String
+    },
+    phone3: {
         type: String
     },
     penyelenggara: {
@@ -36,18 +60,18 @@ const employeeSchema = new Schema({
     tanggalPelaksanaan: {
         type: String
     },
-    sertifikat: {
+    berkasPendukung: {
         type: String
     },
-    foto: {
-        type: String
-    },
-    loa: {
-        type: String
-    },
-    suratIzin: {
-        type: String
-    },
+    // foto: {
+    //     type: String
+    // },
+    // loa: {
+    //     type: String
+    // },
+    // suratIzin: {
+    //     type: String
+    // },
     status: {
         type: String,
         default: 'Pending'

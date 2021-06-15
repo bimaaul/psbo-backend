@@ -37,7 +37,15 @@ const store = (req, res, next) => {
         jenisLomba: req.body.jenisLomba,
         skalaKegiatan: req.body.skalaKegiatan,
         prestasi: req.body.prestasi,
-        anggotaTim: req.body.anggotaTim,
+        anggotaTim1: req.body.anggotaTim1,
+        nim1: req.body.nim1,
+        phone1: req.body.phone1,
+        anggotaTim2: req.body.anggotaTim2,
+        nim2: req.body.nim2,
+        phone2: req.body.phone2,
+        anggotaTim3: req.body.anggotaTim3,
+        nim3: req.body.nim3,
+        phone3: req.body.phone3,
         penyelenggara: req.body.penyelenggara,
         linkWeb: req.body.linkWeb,
         linkMedsos: req.body.linkMedsos,
@@ -47,10 +55,10 @@ const store = (req, res, next) => {
         status: req.body.status,
     })
     if(req.file){
-        employee.sertifikat= req.file.path,
-        employee.foto= req.file.path,
-        employee.loa= req.file.path,
-        employee.suratIzin= req.file.path
+        employee.berkasPendukung= req.file.path
+        // employee.foto= req.file.path,
+        // employee.loa= req.file.path,
+        // employee.suratIzin= req.file.path
     }
     employee.save()
     .then(response => {

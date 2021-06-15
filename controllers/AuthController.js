@@ -10,9 +10,13 @@ const register = (req, res, next) =>{
             })
         }
         let user = new User({
-            name: req.body.name,
+            nama: req.body.nama,
             email: req.body.email,
             phone: req.body.phone,
+            nim: req.body.nim,
+            fakultas: req.body.fakultas,
+            departemen: req.body.departemen,
+            noRekening: req.body.noRekening,
             password: hashedPass
         })
         user.save()
@@ -43,14 +47,14 @@ const login = (req, res, next) =>{
                     })
                 }
                 if(result){
-                    let token = jwt.sign({name: user.name}, 'wcUm00m', {expiresIn: '1h'})
+                    let token = jwt.sign({nama: user.nama}, 'wcUm00m', {expiresIn: '1h'})
                     res.json({
-                        message: 'loged in',
+                        message: 'logged in',
                         token
                     })
                 }else{
                     res.json({
-                        message: 'Wrong pwd'
+                        message: 'Wrong password'
                     })
                 }
             })
