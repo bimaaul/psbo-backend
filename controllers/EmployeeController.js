@@ -78,18 +78,7 @@ const update = (req,res,next)=>{
     let employeeID = req.body.employeeID
 
     let updatedData = {
-        namaKegiatan: req.body.namaKegiatan,
-        jenisLomba: req.body.jenisLomba,
-        skalaKegiatan: req.body.skalaKegiatan,
-        prestasi: req.body.prestasi,
-        anggotaTim: req.body.anggotaTim,
-        penyelenggara: req.body.penyelenggara,
-        linkWeb: req.body.linkWeb,
-        linkMedsos: req.body.linkMedsos,
-        jumlahTim: req.body.jumlahTim,
-        jumlahUniv: req.body.jumlahUniv,
-        tanggalPelaksanaan: req.body.tanggalPelaksanaan,
-        status: req.body.status,
+        status: req.body.status
     }
 
     Employee.findByIdAndUpdate(employeeID, {$set: updatedData})
