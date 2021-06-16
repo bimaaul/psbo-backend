@@ -1,4 +1,4 @@
-const User = require('../models/User')
+const Admin = require('../models/Admin')
 const bcrypt = require('bcryptjs')
 const jwt = require('jsonwebtoken')
 
@@ -9,20 +9,15 @@ const register = (req, res, next) =>{
                 error: err
             })
         }
-        let user = new User({
+        let admin = new Admin({
             nama: req.body.nama,
             email: req.body.email,
-            phone: req.body.phone,
-            nim: req.body.nim,
-            fakultas: req.body.fakultas,
-            departemen: req.body.departemen,
-            noRekening: req.body.noRekening,
-            password: hashedPass,
+            password: hashedPass
         })
-        user.save()
-        .then(user=>{
+        admin.save()
+        .then(admin=>{
             res.json({
-                message: 'User added!'
+                message: 'Admin added!'
             })
         })
         .catch(error=>{
