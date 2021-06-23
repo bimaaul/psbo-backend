@@ -1,14 +1,15 @@
-const express = require('express')
-const router = express.Router()
+const express = require("express");
+const router = express.Router();
 
-const EmployeeController = require('../controllers/EmployeeController')
-const upload = require('../middleware/upload')
-const authenticate = require('../middleware/authenticate')
+const EmployeeController = require("../controllers/EmployeeController");
+const upload = require("../middleware/upload");
+const authenticate = require("../middleware/authenticate");
 
-router.get('/', authenticate, EmployeeController.index)
-router.post('/show', EmployeeController.show)
-router.post('/store', upload.single('berkasPendukung'), EmployeeController.store)
-router.post('/update', EmployeeController.update)
-router.post('/delete', EmployeeController.destroy)
+router.get("/", authenticate, EmployeeController.index);
+router.get("/:userId", authenticate, EmployeeController.getPengajuanUser);
+router.post("/show", EmployeeController.show);
+router.post("/store", upload.single("berkasPendukung"), EmployeeController.store);
+router.post("/update", EmployeeController.update);
+router.post("/delete", EmployeeController.destroy);
 
-module.exports = router
+module.exports = router;

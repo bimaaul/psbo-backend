@@ -1,67 +1,72 @@
-const mongoose = require('mongoose')
-const Schema = mongoose.Schema
+const mongoose = require("mongoose");
+const Schema = mongoose.Schema;
 
-const employeeSchema = new Schema({
+const employeeSchema = new Schema(
+  {
+    userId: {
+      type: String,
+      required: [true],
+    },
     namaKegiatan: {
-        type: String,
-        required: [true, 'Nama kegiatan tidak boleh kosong!']
+      type: String,
+      required: [true, "Nama kegiatan tidak boleh kosong!"],
     },
     jenisLomba: {
-        type: String
+      type: String,
     },
     skalaKegiatan: {
-        type: String
+      type: String,
     },
     prestasi: {
-        type: String
+      type: String,
     },
     anggotaTim1: {
-        type: String
+      type: String,
     },
     nim1: {
-        type: String
+      type: String,
     },
     phone1: {
-        type: String
+      type: String,
     },
     anggotaTim2: {
-        type: String
+      type: String,
     },
     nim2: {
-        type: String
+      type: String,
     },
     phone2: {
-        type: String
+      type: String,
     },
     anggotaTim3: {
-        type: String
+      type: String,
     },
     nim3: {
-        type: String
+      type: String,
     },
     phone3: {
-        type: String
+      type: String,
     },
     penyelenggara: {
-        type: String
+      type: String,
     },
     linkWeb: {
-        type: String
+      type: String,
     },
     linkMedsos: {
-        type: String
+      type: String,
     },
     jumlahTim: {
-        type: String
+      type: String,
     },
     jumlahUniv: {
-        type: String
+      type: String,
     },
     tanggalPelaksanaan: {
-        type: String
+      type: String,
     },
     berkasPendukung: {
-        type: String
+      type: String,
     },
     // foto: {
     //     type: String
@@ -73,11 +78,12 @@ const employeeSchema = new Schema({
     //     type: String
     // },
     status: {
-        type: String,
-        default: 'Pending'
-    }
-}, {timestamps: true})
+      type: String,
+      default: "Pending",
+    },
+  },
+  { timestamps: true }
+);
 
-const Employee = mongoose.model('Employee', employeeSchema)
-module.exports = Employee
-
+const Employee = mongoose.model("Employee", employeeSchema);
+module.exports = Employee;
