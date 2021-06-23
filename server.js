@@ -4,11 +4,12 @@ const morgan = require("morgan");
 const bodyParser = require("body-parser");
 const exp = require("constants");
 const cors = require("cors");
+require("dotenv").config();
 
 const EmployeeRoute = require("./routes/employee");
 const AuthRoute = require("./routes/auth");
 
-mongoose.connect("mongodb://localhost:27017/lomba", { useNewUrlParser: true, useUnifiedTopology: true });
+mongoose.connect(`mongodb+srv://admin-bima:${process.env.DB_KEY}@cluster0.3ypch.mongodb.net/lomba`, { useNewUrlParser: true, useUnifiedTopology: true });
 const db = mongoose.connection;
 
 db.on("error", (err) => {
